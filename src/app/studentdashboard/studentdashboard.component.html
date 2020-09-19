@@ -1,0 +1,29 @@
+<h1 style="text-align: center;">Student Registration Details</h1>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+           
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Is Graduate?</th>
+            <th>Branch</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of student">
+         <td><input type="hidden" value={{s.id}}>
+             {{s.student_name}}</td>
+         <td>{{s.student_email}}</td>
+         <td>{{s.student_age}}</td>
+         <td><input type="checkbox" [checked]=s.student_isGraduate disabled/></td>
+         <td>{{s.student_branch}}</td>  
+        <td >
+            <a class="btn btn-info" [routerLink]="['/update',s.id]">Edit Data </a>
+        </td>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <td><a class="btn btn-info" (click)="delete(s.id)">Delete Data</a></td>   
+    </tr>
+    </tbody>
+
+</table>

@@ -1,0 +1,19 @@
+    <div class="container mt-5">
+    <form [formGroup]="form" (ngSubmit)="uploadfile()">
+            <div>
+            <label>
+                Student Mobile:
+            </label>
+            <input type="number" placeholder="Enter mobile number" class="form-control" formControlName="stud_mobile" id="stud_mobile" name="stud_mobile">
+        </div>
+                <div>
+                    <input type="file" name="image" id="image" class="form-control"  (change)="onFileSelect($event)" />
+                   
+                </div><br>
+                <div> 
+                        <button type="submit" name="submit" class="btn btn-primary" >Upload</button>
+                        <button type="reset" name="reset" class="btn btn-danger ml-4">Clear </button>
+                    </div>
+
+                    </form>
+                    </div>
